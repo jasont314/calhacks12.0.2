@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cy2i2foel840d"]
+
+[node name="MainWorld" type="Node3D"]
