@@ -1,0 +1,27 @@
+# Godot 4+ specific ignores
+.godot/
+.import/
+
+# Godot-specific files to ignore
+*.translation
+*.import
+
+# Build/export outputs
+export/
+*.zip
+*.exe
+*.dmg
+*.apk
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+
