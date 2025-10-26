@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://yl4inkctpdkq"]
+
+[ext_resource type="Script" uid="uid://b6ta0rh1g5msa" path="res://Trump.gd" id="1_f50pn"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+script = ExtResource("1_f50pn")
+
+[node name="DecisionTimer" type="Timer" parent="."]

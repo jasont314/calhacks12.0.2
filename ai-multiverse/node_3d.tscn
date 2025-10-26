@@ -17,10 +17,10 @@ background_mode = 2
 background_color = Color(0.803922, 0.803922, 0.803922, 1)
 sky = SubResource("Sky_i3tns")
 
-[sub_resource type="BoxMesh" id="BoxMesh_50ttm"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_xt2au"]
 size = Vector3(0.361734, 3.05457, 6.58267)
+
+[sub_resource type="BoxMesh" id="BoxMesh_50ttm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kr84j"]
 
@@ -51,6 +51,10 @@ environment = SubResource("Environment_35yax")
 [node name="wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33121, 1.48279, 0)
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wall"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -23.518187, 0, 0)
+shape = SubResource("BoxShape3D_xt2au")
+
 [node name="CSGMesh3D5" type="CSGMesh3D" parent="wall"]
 transform = Transform3D(0.0845187, 0, 0, 0, 9.238439, 0, 0, 0, 43.06063, 27.57863, 3.0994139, -3.3480616)
 material_override = ExtResource("2_ekcyk")
@@ -67,6 +71,7 @@ material_override = ExtResource("2_ekcyk")
 mesh = SubResource("BoxMesh_50ttm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9981847, 0, 0)
 shape = SubResource("BoxShape3D_xt2au")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="wall"]
@@ -93,6 +98,18 @@ mesh = SubResource("BoxMesh_50ttm")
 transform = Transform3D(-4.4148503e-09, 0, 51.274, 0, 11, 0, -0.101, 0, -2.2412576e-06, 2.3114583, 2.0897608, 24.63471)
 material_override = ExtResource("2_ekcyk")
 mesh = SubResource("BoxMesh_50ttm")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="wall"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 26.764471, 0, 0)
+shape = SubResource("BoxShape3D_xt2au")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="wall"]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -2.3053238, -1.1842766, 22.725433)
+shape = SubResource("BoxShape3D_xt2au")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="wall"]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -7.174095, -1.9684505, -22.3098)
+shape = SubResource("BoxShape3D_xt2au")
 
 [node name="ramp" type="StaticBody3D" parent="."]
 
