@@ -145,7 +145,7 @@ func _handle_model_reply(text: String) -> Dictionary:
 
 		var answer := cleaned.to_lower()
 
-		if answer.begins_with("yes"):
+		if true:#answer.begins_with("yes"):
 			# try to claim the "next turn"
 			var got_slot := server_ref.reserve_generation(bot_name)
 
