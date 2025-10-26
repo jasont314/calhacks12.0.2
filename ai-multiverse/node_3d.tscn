@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c1hjwgdk1bss2"]
+[gd_scene load_steps=17 format=3 uid="uid://dief5j4egd4aq"]
 
 [ext_resource type="Script" uid="uid://cqeer7s1mc8gg" path="res://main_world.gd" id="1_a0tk4"]
 [ext_resource type="Material" uid="uid://drnj14n03hpft" path="res://materials/wall.tres" id="2_ekcyk"]
 [ext_resource type="PackedScene" uid="uid://dt1e63qqowl1d" path="res://player.tscn" id="3_r3fl7"]
 [ext_resource type="PackedScene" uid="uid://csc186kpntrbh" path="res://ai_character.tscn" id="4_r3fl7"]
+[ext_resource type="PackedScene" uid="uid://bk1bgu4rtg505" path="res://materials/donald-trump-cartoon-carricature/source/tripo_pbr_model_7e460bc7-4f52-4783-bf60-b9041b47e2a7.glb" id="5_i5arm"]
+[ext_resource type="PackedScene" uid="uid://dgso7xvobd78g" path="res://materials/barack-obama/source/c1a8bc86bedf_c640d68d2d6b_Photo_Realistic_rea.glb" id="6_wc5p8"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_c2n74"]
 
@@ -49,13 +51,48 @@ environment = SubResource("Environment_35yax")
 [node name="wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33121, 1.48279, 0)
 
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="wall"]
+transform = Transform3D(0.0845187, 0, 0, 0, 9.238439, 0, 0, 0, 43.06063, 27.57863, 3.0994139, -3.3480616)
+material_override = ExtResource("2_ekcyk")
+mesh = SubResource("BoxMesh_50ttm")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="wall"]
+transform = Transform3D(0.0845187, 0, 0, 0, 9.238439, 0, 0, 0, 43.06063, -23.058851, 2.7089443, -3.5735302)
+material_override = ExtResource("2_ekcyk")
+mesh = SubResource("BoxMesh_50ttm")
+
 [node name="CSGMesh3D" type="CSGMesh3D" parent="wall"]
-transform = Transform3D(0.290721, 0, 0, 0, 3.03948, 0, 0, 0, 6.56206, 0, 0, 0)
+transform = Transform3D(0.290721, 0, 0, 0, 3.03948, 0, 0, 0, 6.56206, 1.898263, 0, 0)
 material_override = ExtResource("2_ekcyk")
 mesh = SubResource("BoxMesh_50ttm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall"]
 shape = SubResource("BoxShape3D_xt2au")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="wall"]
+transform = Transform3D(0.0845187, 0, 0, 0, 9.238439, 0, 0, 0, 43.06063, -23.111408, 2.8333998, 3.2010498)
+material_override = ExtResource("2_ekcyk")
+mesh = SubResource("BoxMesh_50ttm")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="wall"]
+transform = Transform3D(0.0845187, 0, 0, 0, 9.238439, 0, 0, 0, 43.06063, 27.750692, 3.249466, 3.3931255)
+material_override = ExtResource("2_ekcyk")
+mesh = SubResource("BoxMesh_50ttm")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="wall"]
+transform = Transform3D(-3.6944297e-09, 0, 43.06063, 0, 9.238439, 0, -0.0845187, 0, -1.88224e-06, 5.782504, 3.086341, -25.316923)
+material_override = ExtResource("2_ekcyk")
+mesh = SubResource("BoxMesh_50ttm")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="wall"]
+transform = Transform3D(-3.6944297e-09, 0, 43.06063, 0, 9.238439, 0, -0.0845187, 0, -1.88224e-06, -1.8384945, 3.026596, -25.262955)
+material_override = ExtResource("2_ekcyk")
+mesh = SubResource("BoxMesh_50ttm")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="wall"]
+transform = Transform3D(-4.4148503e-09, 0, 51.274, 0, 11, 0, -0.101, 0, -2.2412576e-06, 2.3114583, 2.0897608, 24.63471)
+material_override = ExtResource("2_ekcyk")
+mesh = SubResource("BoxMesh_50ttm")
 
 [node name="ramp" type="StaticBody3D" parent="."]
 
@@ -93,8 +130,13 @@ offset_bottom = 64.0
 text = "JOIN"
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://dt1e63qqowl1d")
 spawn_path = NodePath("..")
+
+[node name="Trump_AI" parent="." instance=ExtResource("5_i5arm")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.2209477, 0.7257204, 2.7425861)
+
+[node name="Obama_AI" parent="." instance=ExtResource("6_wc5p8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.513203, 0.7466529, 3.3950696)
 
 [connection signal="pressed" from="CanvasLayer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="CanvasLayer/Join" to="." method="_on_join_pressed"]
