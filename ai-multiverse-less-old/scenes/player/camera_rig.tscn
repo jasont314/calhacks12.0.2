@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://iukx2n7cdvam"]
+
+[node name="CameraRig" type="Node3D"]
