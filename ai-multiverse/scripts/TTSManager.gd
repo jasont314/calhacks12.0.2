@@ -57,6 +57,20 @@ func _play_item(item: Dictionary) -> void:
 	# 2. create / play player
 	_current_player = AudioStreamPlayer.new()
 	_current_player.stream = stream
+	
+	# Per-character gain tweaks
+	match bot_name:
+		"Peter Griffin":
+			_current_player.volume_db = 6.0  # louder
+		"Barack Obama":
+			_current_player.volume_db = 0.0  # normal
+		"Donald Trump":
+			_current_player.volume_db = 0.0
+		"SpongeBob":
+			_current_player.volume_db = 0.0
+		_:
+			_current_player.volume_db = 0.0
+		
 	add_child(_current_player)
 
 	# Let server know this bot is "on mic" for clip_len seconds
