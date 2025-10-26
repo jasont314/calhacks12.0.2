@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://0wmfie8mt2qe"]
-
-[ext_resource type="Script" uid="uid://xp88478l5dmy" path="res://ai_chat_server.gd" id="1_higd6"]
-
-[node name="AIChatRoot" type="Node2D"]
-script = ExtResource("1_higd6")

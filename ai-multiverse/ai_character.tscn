@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://csc186kpntrbh"]
+[gd_scene load_steps=4 format=3 uid="uid://csc186kpntrbh"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_r3gj4"]
+[ext_resource type="PackedScene" uid="uid://jbps054xs5yh" path="res://obama_better.tscn" id="1_itvwh"]
+[ext_resource type="Script" uid="uid://tmuecgepgm8u" path="res://obama_better_walk.gd" id="1_xkoxx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_itvwh"]
+radius = 0.477
+height = 1.431
 
 [node name="AICharacter" type="CharacterBody3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_r3gj4")
+script = ExtResource("1_xkoxx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_itvwh")
+
+[node name="c1a8bc86bedf_c640d68d2d6b_Photo_Realistic_rea" parent="." instance=ExtResource("1_itvwh")]

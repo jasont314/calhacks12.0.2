@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7bru00v0icd2"]
+
+[ext_resource type="PackedScene" uid="uid://bk1bgu4rtg505" path="res://materials/donald-trump-cartoon-carricature/source/tripo_pbr_model_7e460bc7-4f52-4783-bf60-b9041b47e2a7.glb" id="1_p27qg"]
+
+[node name="AuxScene" instance=ExtResource("1_p27qg")]
+
+[node name="tripo_node_7e460bc7-4f52-4783-bf60-b9041b47e2a7" parent="Node" index="0"]
+transform = Transform3D(1.74, 0, 0, 0, 1.74, 0, 0, 0, 1.74, -0.13010967, 0.43571937, -0.20015931)

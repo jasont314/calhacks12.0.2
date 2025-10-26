@@ -70,7 +70,7 @@ func _on_host_pressed() -> void:
 	_start_voice(sidecar_path, server_ip, username, CHANNEL_NAME)
 
 func _on_join_pressed() -> void:
-	var host_ip := "192.168.1.23"  # TODO: replace w/ UI input
+	var host_ip := "127.0.0.1"  # TODO: replace w/ UI input
 	var ok := peer.create_client(host_ip, 1027) == OK
 	multiplayer.multiplayer_peer = peer
 	$CanvasLayer.hide()

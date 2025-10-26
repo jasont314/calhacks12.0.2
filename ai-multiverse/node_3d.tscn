@@ -4,8 +4,8 @@
 [ext_resource type="Material" uid="uid://drnj14n03hpft" path="res://materials/wall.tres" id="2_ekcyk"]
 [ext_resource type="PackedScene" uid="uid://dt1e63qqowl1d" path="res://player.tscn" id="3_r3fl7"]
 [ext_resource type="PackedScene" uid="uid://csc186kpntrbh" path="res://ai_character.tscn" id="4_r3fl7"]
-[ext_resource type="PackedScene" uid="uid://bk1bgu4rtg505" path="res://materials/donald-trump-cartoon-carricature/source/tripo_pbr_model_7e460bc7-4f52-4783-bf60-b9041b47e2a7.glb" id="5_i5arm"]
-[ext_resource type="PackedScene" uid="uid://dgso7xvobd78g" path="res://materials/barack-obama/source/c1a8bc86bedf_c640d68d2d6b_Photo_Realistic_rea.glb" id="6_wc5p8"]
+[ext_resource type="PackedScene" uid="uid://cv6gtj1pdjy8x" path="res://trump_better.tscn" id="5_jka67"]
+[ext_resource type="Script" uid="uid://b8tanxao3t161" path="res://trump_better_walk_2.gd" id="6_i5arm"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_c2n74"]
 
@@ -121,8 +121,12 @@ shape = SubResource("BoxShape3D_kr84j")
 transform = Transform3D(1, 0, 0, 0, 0.965926, -3.95087, 0, 0.258819, 14.7449, 1.88925, -0.335828, -5.65994)
 mesh = SubResource("BoxMesh_gx7vh")
 
-[node name="AICharacter" parent="." instance=ExtResource("4_r3fl7")]
+[node name="Obama" parent="." instance=ExtResource("4_r3fl7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9905486, 7.4749956)
+
+[node name="Trump" parent="." instance=ExtResource("5_jka67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1154054, 0.7964803, 1.3552365)
+script = ExtResource("6_i5arm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -148,12 +152,6 @@ text = "JOIN"
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 spawn_path = NodePath("..")
-
-[node name="Trump_AI" parent="." instance=ExtResource("5_i5arm")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.2209477, 0.7257204, 2.7425861)
-
-[node name="Obama_AI" parent="." instance=ExtResource("6_wc5p8")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.513203, 0.7466529, 3.3950696)
 
 [connection signal="pressed" from="CanvasLayer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="CanvasLayer/Join" to="." method="_on_join_pressed"]

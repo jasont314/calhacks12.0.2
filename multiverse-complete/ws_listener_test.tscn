@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://87542rqhu1ep"]
-
-[ext_resource type="Script" uid="uid://udfq7bfy4l4v" path="res://scripts/WSListener.gd" id="1_bx3ps"]
-
-[node name="WSListenerTest" type="Node2D"]
-script = ExtResource("1_bx3ps")
