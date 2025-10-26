@@ -5,7 +5,7 @@ API_KEY = "5bb45d634f4e4982a0fd2502998d9882"
 ASR_URL = "https://api.fish.audio/v1/asr"
 GODOT_WS_URL = "ws://127.0.0.1:8765"  # Godot WebSocketServer
 
-CHUNK_SEC = 5
+CHUNK_SEC = 3
 SR = 44100
 
 def record_chunk():
