@@ -23,7 +23,7 @@ func _on_host_pressed() -> void:
 	$CanvasLayer.hide()
 	
 func _on_join_pressed() -> void:
-	peer.create_client("127.0.0.1", 1027)
+	peer.create_client("192.0.0.2", 1027)
 	multiplayer.multiplayer_peer = peer
 	$CanvasLayer.hide()
 	
