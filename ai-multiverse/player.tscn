@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt1e63qqowl1d"]
+[gd_scene load_steps=7 format=3 uid="uid://dt1e63qqowl1d"]
 
 [ext_resource type="Script" uid="uid://qgbxfciuj3dq" path="res://Player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://dwe4fcdho068h" path="res://audio_controller.tscn" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_07h6u"]
 radius = 0.616971
@@ -32,3 +33,8 @@ replication_config = SubResource("SceneReplicationConfig_4flbx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_onrkg")
+
+[node name="AudioController" parent="." instance=ExtResource("2_onrkg")]
+outputPath = NodePath("../AudioStreamPlayer2D")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

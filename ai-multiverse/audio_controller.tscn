@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwe4fcdho068h"]
+
+[ext_resource type="Script" uid="uid://cc127mx38fup8" path="res://audio_controller.gd" id="1_w1gap"]
+
+[node name="AudioController" type="Node3D"]
+script = ExtResource("1_w1gap")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

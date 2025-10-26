@@ -5,6 +5,7 @@ const JUMP_VELOCITY = 4.5
 
 @onready var pivot = $CamOrigin
 @export var sens = 0.5
+@onready var audioManager : PackedScene
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 # var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -21,6 +22,10 @@ func _enter_tree() -> void:
 func _ready(): 
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = is_multiplayer_authority()
+	
+	var s = audioManager.instantiate()
+	s.setupAudio(1)
+	add_child(s)
 	
 	if not is_multiplayer_authority():
 		set_physics_process(false)
