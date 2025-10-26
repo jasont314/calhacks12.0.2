@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dief5j4egd4aq"]
+[gd_scene load_steps=17 format=3 uid="uid://dief5j4egd4aq"]
 
-[ext_resource type="Script" path="res://main_world.gd" id="1_a0tk4"]
+[ext_resource type="Script" uid="uid://cqeer7s1mc8gg" path="res://main_world.gd" id="1_a0tk4"]
 [ext_resource type="Material" uid="uid://drnj14n03hpft" path="res://materials/wall.tres" id="2_ekcyk"]
-[ext_resource type="PackedScene" path="res://player.tscn" id="3_r3fl7"]
-[ext_resource type="PackedScene" path="res://ai_character.tscn" id="4_r3fl7"]
+[ext_resource type="PackedScene" uid="uid://dt1e63qqowl1d" path="res://player.tscn" id="3_r3fl7"]
+[ext_resource type="PackedScene" uid="uid://csc186kpntrbh" path="res://ai_character.tscn" id="4_r3fl7"]
+[ext_resource type="PackedScene" uid="uid://bk1bgu4rtg505" path="res://materials/donald-trump-cartoon-carricature/source/tripo_pbr_model_7e460bc7-4f52-4783-bf60-b9041b47e2a7.glb" id="5_i5arm"]
+[ext_resource type="PackedScene" uid="uid://dgso7xvobd78g" path="res://materials/barack-obama/source/c1a8bc86bedf_c640d68d2d6b_Photo_Realistic_rea.glb" id="6_wc5p8"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_c2n74"]
 
@@ -129,6 +131,12 @@ text = "JOIN"
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 spawn_path = NodePath("..")
+
+[node name="Trump_AI" parent="." instance=ExtResource("5_i5arm")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.2209477, 0.7257204, 2.7425861)
+
+[node name="Obama_AI" parent="." instance=ExtResource("6_wc5p8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.513203, 0.7466529, 3.3950696)
 
 [connection signal="pressed" from="CanvasLayer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="CanvasLayer/Join" to="." method="_on_join_pressed"]
