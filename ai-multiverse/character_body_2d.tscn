@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://yl4inkctpdkq"]
 
-[ext_resource type="Script" uid="uid://b6ta0rh1g5msa" path="res://Trump.gd" id="1_f50pn"]
+[ext_resource type="Script" uid="uid://b6ta0rh1g5msa" path="res://characters/Trump.gd" id="1_f50pn"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
@@ -8,5 +8,10 @@
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 script = ExtResource("1_f50pn")
+move_speed = null
+min_decide_time = null
+max_decide_time = null
+idle_chance = null
+roam_area = null
 
 [node name="DecisionTimer" type="Timer" parent="."]

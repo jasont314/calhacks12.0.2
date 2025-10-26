@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://gv4hswwr1vj8"]
+
+[ext_resource type="PackedScene" uid="uid://bk1bgu4rtg505" path="res://materials/donald-trump-cartoon-carricature/source/tripo_pbr_model_7e460bc7-4f52-4783-bf60-b9041b47e2a7.glb" id="1_penkw"]
+
+[node name="AuxScene" instance=ExtResource("1_penkw")]

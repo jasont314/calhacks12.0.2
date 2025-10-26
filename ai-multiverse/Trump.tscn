@@ -1,5 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://gv4hswwr1vj8"]
+[gd_scene load_steps=4 format=3 uid="uid://1tcggetsgj7d"]
 
-[ext_resource type="PackedScene" uid="uid://bk1bgu4rtg505" path="res://materials/donald-trump-cartoon-carricature/source/tripo_pbr_model_7e460bc7-4f52-4783-bf60-b9041b47e2a7.glb" id="1_penkw"]
+[ext_resource type="Script" uid="uid://b6ta0rh1g5msa" path="res://characters/Trump.gd" id="1_bi23l"]
+[ext_resource type="Texture2D" uid="uid://bbkv8x0n2rqd3" path="res://materials/donald-trump-cartoon-carricature/textures/gltf_embedded_1.jpeg" id="1_t06nh"]
 
-[node name="AuxScene" instance=ExtResource("1_penkw")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bi23l"]
+
+[node name="Trump1" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_bi23l")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_t06nh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_bi23l")
+
+[node name="DecisionTimer" type="Timer" parent="CharacterBody2D"]
